@@ -1,0 +1,255 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E11E11E11E11E11E11E11E11 /* MacAppLauncherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11F11F11F11F11F11F11F11 /* MacAppLauncherApp.swift */; };
+		E22E22E22E22E22E22E22E22 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22F22F22F22F22F22F22F22 /* AppStore.swift */; };
+		E33E33E33E33E33E33E33E33 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33F33F33F33F33F33F33F33 /* MenuBarView.swift */; };
+		E44E44E44E44E44E44E44E44 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44F44F44F44F44F44F44F44 /* SettingsView.swift */; };
+		E55E55E55E55E55E55E55E55 /* HotkeyRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55F55F55F55F55F55F55F55 /* HotkeyRecorder.swift */; };
+		E66E66E66E66E66E66E66E66 /* HotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F66F66F66F66F66F66F66 /* HotkeyManager.swift */; };
+		E77E77E77E77E77E77E77E77 /* AppLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77F77F77F77F77F77F77F77 /* AppLauncher.swift */; };
+		E88E88E88E88E88E88E88E88 /* SQLiteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88F88F88F88F88F88F88F88 /* SQLiteStore.swift */; };
+		E99E99E99E99E99E99E99E99 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99F99F99F99F99F99F99F99 /* Models.swift */; };
+		EA1EA1EA1EA1EA1EA1EA1EA1 /* LoginItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FA1FA1FA1FA1FA1FA1FA1 /* LoginItemManager.swift */; };
+		EB1EB1EB1EB1EB1EB1EB1EB1 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB1FB1FB1FB1FB1FB1FB1FB1 /* Carbon.framework */; };
+		EB2EB2EB2EB2EB2EB2EB2EB2 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2FB2FB2FB2FB2FB2FB2FB2 /* ServiceManagement.framework */; };
+		EB3EB3EB3EB3EB3EB3EB3EB3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3FB3FB3FB3FB3FB3FB3FB3 /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C22C22C22C22C22C22C22C22 /* MacAppLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = MacAppLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F11F11F11F11F11F11F11F11 /* MacAppLauncherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacAppLauncherApp.swift; sourceTree = "<group>"; };
+		F22F22F22F22F22F22F22F22 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+		F33F33F33F33F33F33F33F33 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		F44F44F44F44F44F44F44F44 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F55F55F55F55F55F55F55F55 /* HotkeyRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyRecorder.swift; sourceTree = "<group>"; };
+		F66F66F66F66F66F66F66F66 /* HotkeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManager.swift; sourceTree = "<group>"; };
+		F77F77F77F77F77F77F77F77 /* AppLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLauncher.swift; sourceTree = "<group>"; };
+		F88F88F88F88F88F88F88F88 /* SQLiteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteStore.swift; sourceTree = "<group>"; };
+		F99F99F99F99F99F99F99F99 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		FA1FA1FA1FA1FA1FA1FA1FA1 /* LoginItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemManager.swift; sourceTree = "<group>"; };
+		FA2FA2FA2FA2FA2FA2FA2FA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB1FB1FB1FB1FB1FB1FB1FB1 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		FB2FB2FB2FB2FB2FB2FB2FB2 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		FB3FB3FB3FB3FB3FB3FB3FB3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D22D22D22D22D22D22D22D22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB1EB1EB1EB1EB1EB1EB1EB1 /* Carbon.framework in Frameworks */,
+				EB2EB2EB2EB2EB2EB2EB2EB2 /* ServiceManagement.framework in Frameworks */,
+				EB3EB3EB3EB3EB3EB3EB3EB3 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B11B11B11B11B11B11B11B11 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B33B33B33B33B33B33B33B33 /* MacAppLauncher */,
+				B44B44B44B44B44B44B44B44 /* Frameworks */,
+				B22B22B22B22B22B22B22B22 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B22B22B22B22B22B22B22B22 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C22C22C22C22C22C22C22C22 /* MacAppLauncher.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B33B33B33B33B33B33B33B33 /* MacAppLauncher */ = {
+			isa = PBXGroup;
+			children = (
+				F11F11F11F11F11F11F11F11 /* MacAppLauncherApp.swift */,
+				F22F22F22F22F22F22F22F22 /* AppStore.swift */,
+				F33F33F33F33F33F33F33F33 /* MenuBarView.swift */,
+				F44F44F44F44F44F44F44F44 /* SettingsView.swift */,
+				F55F55F55F55F55F55F55F55 /* HotkeyRecorder.swift */,
+				F66F66F66F66F66F66F66F66 /* HotkeyManager.swift */,
+				F77F77F77F77F77F77F77F77 /* AppLauncher.swift */,
+				F88F88F88F88F88F88F88F88 /* SQLiteStore.swift */,
+				F99F99F99F99F99F99F99F99 /* Models.swift */,
+				FA1FA1FA1FA1FA1FA1FA1FA1 /* LoginItemManager.swift */,
+				FA2FA2FA2FA2FA2FA2FA2FA2 /* Info.plist */,
+			);
+			path = MacAppLauncher;
+			sourceTree = "<group>";
+		};
+		B44B44B44B44B44B44B44B44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB1FB1FB1FB1FB1FB1FB1FB1 /* Carbon.framework */,
+				FB2FB2FB2FB2FB2FB2FB2FB2 /* ServiceManagement.framework */,
+				FB3FB3FB3FB3FB3FB3FB3FB3 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C11C11C11C11C11C11C11C11 /* MacAppLauncher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = G22G22G22G22G22G22G22G22 /* Build configuration list for PBXNativeTarget "MacAppLauncher" */;
+			buildPhases = (
+				D11D11D11D11D11D11D11D11 /* Sources */,
+				D22D22D22D22D22D22D22D22 /* Frameworks */,
+				D33D33D33D33D33D33D33D33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacAppLauncher;
+			productName = MacAppLauncher;
+			productReference = C22C22C22C22C22C22C22C22 /* MacAppLauncher.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A11A11A11A11A11A11A11A11 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = G11G11G11G11G11G11G11G11 /* Build configuration list for PBXProject "MacAppLauncher" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			mainGroup = B11B11B11B11B11B11B11B11;
+			productRefGroup = B22B22B22B22B22B22B22B22 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C11C11C11C11C11C11C11C11 /* MacAppLauncher */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D33D33D33D33D33D33D33D33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D11D11D11D11D11D11D11D11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E11E11E11E11E11E11E11E11 /* MacAppLauncherApp.swift in Sources */,
+				E22E22E22E22E22E22E22E22 /* AppStore.swift in Sources */,
+				E33E33E33E33E33E33E33E33 /* MenuBarView.swift in Sources */,
+				E44E44E44E44E44E44E44E44 /* SettingsView.swift in Sources */,
+				E55E55E55E55E55E55E55E55 /* HotkeyRecorder.swift in Sources */,
+				E66E66E66E66E66E66E66E66 /* HotkeyManager.swift in Sources */,
+				E77E77E77E77E77E77E77E77 /* AppLauncher.swift in Sources */,
+				E88E88E88E88E88E88E88E88 /* SQLiteStore.swift in Sources */,
+				E99E99E99E99E99E99E99E99 /* Models.swift in Sources */,
+				EA1EA1EA1EA1EA1EA1EA1EA1 /* LoginItemManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		H11H11H11H11H11H11H11H11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		H22H22H22H22H22H22H22H22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		H33H33H33H33H33H33H33H33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MacAppLauncher/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.chengzi0103.boltlauncher;
+				PRODUCT_NAME = BoltLauncher;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		H44H44H44H44H44H44H44H44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MacAppLauncher/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.chengzi0103.boltlauncher;
+				PRODUCT_NAME = BoltLauncher;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		G11G11G11G11G11G11G11G11 /* Build configuration list for PBXProject "MacAppLauncher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				H11H11H11H11H11H11H11H11 /* Debug */,
+				H22H22H22H22H22H22H22H22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		G22G22G22G22G22G22G22G22 /* Build configuration list for PBXNativeTarget "MacAppLauncher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				H33H33H33H33H33H33H33H33 /* Debug */,
+				H44H44H44H44H44H44H44H44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A11A11A11A11A11A11A11A11 /* Project object */;
+}

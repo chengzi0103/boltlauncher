@@ -1,0 +1,17 @@
+# Xcode
+DerivedData/
+*.xcuserstate
+xcuserdata/
+
+# Build artifacts
+build/
+*.dSYM
+
+# macOS
+.DS_Store
+
+# SwiftPM (not used here but harmless)
+.build/
+
+# Release artifacts
+dist/
