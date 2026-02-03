@@ -16,6 +16,7 @@
 		E88E88E88E88E88E88E88E88 /* SQLiteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88F88F88F88F88F88F88F88 /* SQLiteStore.swift */; };
 		E99E99E99E99E99E99E99E99 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99F99F99F99F99F99F99F99 /* Models.swift */; };
 		EA1EA1EA1EA1EA1EA1EA1EA1 /* LoginItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FA1FA1FA1FA1FA1FA1FA1 /* LoginItemManager.swift */; };
+		EC1EC1EC1EC1EC1EC1EC1EC1 /* BoltLauncher.icns in Resources */ = {isa = PBXBuildFile; fileRef = FC1FC1FC1FC1FC1FC1FC1FC1 /* BoltLauncher.icns */; };
 		EB1EB1EB1EB1EB1EB1EB1EB1 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB1FB1FB1FB1FB1FB1FB1FB1 /* Carbon.framework */; };
 		EB2EB2EB2EB2EB2EB2EB2EB2 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2FB2FB2FB2FB2FB2FB2FB2 /* ServiceManagement.framework */; };
 		EB3EB3EB3EB3EB3EB3EB3EB3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3FB3FB3FB3FB3FB3FB3FB3 /* Cocoa.framework */; };
@@ -34,6 +35,7 @@
 		F99F99F99F99F99F99F99F99 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		FA1FA1FA1FA1FA1FA1FA1FA1 /* LoginItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemManager.swift; sourceTree = "<group>"; };
 		FA2FA2FA2FA2FA2FA2FA2FA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC1FC1FC1FC1FC1FC1FC1FC1 /* BoltLauncher.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = BoltLauncher.icns; path = Resources/BoltLauncher.icns; sourceTree = "<group>"; };
 		FB1FB1FB1FB1FB1FB1FB1FB1 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		FB2FB2FB2FB2FB2FB2FB2FB2 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		FB3FB3FB3FB3FB3FB3FB3FB3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -84,6 +86,7 @@
 				F99F99F99F99F99F99F99F99 /* Models.swift */,
 				FA1FA1FA1FA1FA1FA1FA1FA1 /* LoginItemManager.swift */,
 				FA2FA2FA2FA2FA2FA2FA2FA2 /* Info.plist */,
+				FC1FC1FC1FC1FC1FC1FC1FC1 /* BoltLauncher.icns */,
 			);
 			path = MacAppLauncher;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC1EC1EC1EC1EC1EC1EC1EC1 /* BoltLauncher.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

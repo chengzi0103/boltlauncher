@@ -12,6 +12,12 @@ A tiny macOS **menu bar app launcher** with **global hotkeys**.
 
 > This project is currently **unsigned / not notarized** (free distribution). macOS Gatekeeper may block the first launch.
 
+## Screenshots
+
+![Menu bar](docs/images/screenshot-menubar.png)
+
+![Settings](docs/images/screenshot-settings.png)
+
 ## Download
 
 Go to **Releases** and download one of:
@@ -62,7 +68,7 @@ The built app will be in `build/Build/Products/Release/`.
 
 BoltLauncher stores configuration in a local SQLite database:
 
-`~/Library/Application Support/MacAppLauncher/launcher.sqlite`
+`~/Library/Application Support/BoltLauncher/launcher.sqlite`
 
 ## License
 

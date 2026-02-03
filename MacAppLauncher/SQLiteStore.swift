@@ -169,6 +169,6 @@ final class SQLiteStore {
 
     private static func databaseURL() -> URL {
         let base = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
-        return base.appendingPathComponent("MacAppLauncher").appendingPathComponent("launcher.sqlite")
+        return base.appendingPathComponent("BoltLauncher").appendingPathComponent("launcher.sqlite")
     }
 }
