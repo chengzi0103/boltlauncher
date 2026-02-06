@@ -49,6 +49,11 @@ enum LaunchResult: Equatable {
     case failed
 }
 
+enum HotkeyAction: Equatable {
+    case app(Int)
+    case screenshot
+}
+
 enum KeyCodeMapper {
     private static let mapping: [Int: String] = [
         0: "A",

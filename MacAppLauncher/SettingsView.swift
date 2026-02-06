@@ -13,6 +13,26 @@ struct SettingsView: View {
             Divider()
 
             HStack {
+                Text("Screenshot Hotkey")
+                    .font(.headline)
+                Spacer()
+                HotkeyRecorder(hotkey: appStore.screenshotHotkey) { newHotkey in
+                    appStore.updateScreenshotHotkey(newHotkey)
+                }
+            }
+            Toggle("Enable screenshot", isOn: Binding(
+                get: { appStore.screenshotEnabled },
+                set: { appStore.updateScreenshotEnabled($0) }
+            ))
+
+            Text(appStore.screenshotEnabled
+                 ? "Press to capture: full screen, window, or region."
+                 : "Screenshot disabled. No screen recording permission required.")
+                .foregroundStyle(.secondary)
+
+            Divider()
+
+            HStack {
                 Text("Apps")
                     .font(.headline)
                 Spacer()

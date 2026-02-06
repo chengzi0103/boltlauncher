@@ -6,13 +6,16 @@ import UniformTypeIdentifiers
 final class AppStore: ObservableObject {
     @Published var apps: [AppEntry] = []
     @Published var loginEnabled: Bool
+    @Published var screenshotHotkey: Hotkey
+    @Published var screenshotEnabled: Bool
 
     private let store: SQLiteStore
     private let launcher: AppLauncher
     private let loginItemManager: LoginItemManager
+    private let screenshotManager: ScreenshotManager
     private lazy var hotkeyManager: HotkeyManager = {
-        HotkeyManager { [weak self] appId in
-            self?.handleHotkey(appId)
+        HotkeyManager { [weak self] action in
+            self?.handleHotkey(action)
         }
     }()
 
@@ -20,13 +23,21 @@ final class AppStore: ObservableObject {
         store = SQLiteStore()
         launcher = AppLauncher()
         loginItemManager = LoginItemManager()
+        screenshotManager = ScreenshotManager()
         loginEnabled = loginItemManager.isEnabled
+        screenshotHotkey = store.fetchScreenshotHotkey()
+        screenshotEnabled = store.fetchScreenshotEnabled()
         reload()
     }
 
     func reload() {
         apps = store.fetchApps()
-        hotkeyManager.register(apps: apps)
+        screenshotHotkey = store.fetchScreenshotHotkey()
+        screenshotEnabled = store.fetchScreenshotEnabled()
+        hotkeyManager.register(
+            apps: apps,
+            screenshotHotkey: screenshotEnabled ? screenshotHotkey : nil
+        )
     }
 
     func addAppFromPanel() {
@@ -72,8 +83,24 @@ final class AppStore: ObservableObject {
         loginEnabled = loginItemManager.isEnabled
     }
 
-    private func handleHotkey(_ appId: Int) {
-        guard let app = apps.first(where: { $0.id == appId }) else { return }
-        launch(app: app)
+    func updateScreenshotHotkey(_ hotkey: Hotkey) {
+        store.updateScreenshotHotkey(hotkey)
+        reload()
+    }
+
+    func updateScreenshotEnabled(_ enabled: Bool) {
+        store.updateScreenshotEnabled(enabled)
+        reload()
+    }
+
+    private func handleHotkey(_ action: HotkeyAction) {
+        switch action {
+        case .app(let appId):
+            guard let app = apps.first(where: { $0.id == appId }) else { return }
+            launch(app: app)
+        case .screenshot:
+            guard screenshotEnabled else { return }
+            screenshotManager.startCapture()
+        }
     }
 }

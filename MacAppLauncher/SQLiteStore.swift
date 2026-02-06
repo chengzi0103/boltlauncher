@@ -1,3 +1,4 @@
+import AppKit
 import Foundation
 import SQLite3
 
@@ -37,6 +38,12 @@ final class SQLiteStore {
             app_id INTEGER NOT NULL,
             launched_at TEXT NOT NULL,
             FOREIGN KEY(app_id) REFERENCES apps(id) ON DELETE CASCADE
+        );
+        """)
+        _ = execute(sql: """
+        CREATE TABLE IF NOT EXISTS settings (
+            key TEXT PRIMARY KEY,
+            int_value INTEGER
         );
         """)
     }
@@ -149,9 +156,61 @@ final class SQLiteStore {
         sqlite3_finalize(updateStatement)
     }
 
+    func fetchScreenshotHotkey() -> Hotkey {
+        let keyCode = getSettingInt(key: "screenshot_key_code") ?? 1
+        let modifiers = getSettingInt(key: "screenshot_modifiers")
+            ?? Int(NSEvent.ModifierFlags.option.rawValue)
+        return Hotkey(keyCode: keyCode, modifiers: modifiers)
+    }
+
+    func updateScreenshotHotkey(_ hotkey: Hotkey) {
+        setSettingInt(key: "screenshot_key_code", value: hotkey.keyCode)
+        setSettingInt(key: "screenshot_modifiers", value: hotkey.modifiers)
+    }
+
+    func fetchScreenshotEnabled() -> Bool {
+        let value = getSettingInt(key: "screenshot_enabled")
+        return value == nil ? true : value == 1
+    }
+
+    func updateScreenshotEnabled(_ enabled: Bool) {
+        setSettingInt(key: "screenshot_enabled", value: enabled ? 1 : 0)
+    }
+
     private func execute(sql: String) -> Bool {
         guard let db else { return false }
         return sqlite3_exec(db, sql, nil, nil, nil) == SQLITE_OK
+    }
+
+    private func getSettingInt(key: String) -> Int? {
+        guard let db else { return nil }
+        let sql = "SELECT int_value FROM settings WHERE key = ? LIMIT 1;"
+        var statement: OpaquePointer?
+        var value: Int?
+        if sqlite3_prepare_v2(db, sql, -1, &statement, nil) == SQLITE_OK, let statement {
+            sqlite3_bind_text(statement, 1, (key as NSString).utf8String, -1, sqliteTransient)
+            if sqlite3_step(statement) == SQLITE_ROW {
+                value = Int(sqlite3_column_int(statement, 0))
+            }
+        }
+        sqlite3_finalize(statement)
+        return value
+    }
+
+    private func setSettingInt(key: String, value: Int) {
+        guard let db else { return }
+        let sql = """
+        INSERT INTO settings (key, int_value)
+        VALUES (?, ?)
+        ON CONFLICT(key) DO UPDATE SET int_value = excluded.int_value;
+        """
+        var statement: OpaquePointer?
+        if sqlite3_prepare_v2(db, sql, -1, &statement, nil) == SQLITE_OK, let statement {
+            sqlite3_bind_text(statement, 1, (key as NSString).utf8String, -1, sqliteTransient)
+            sqlite3_bind_int(statement, 2, Int32(value))
+            _ = sqlite3_step(statement)
+        }
+        sqlite3_finalize(statement)
     }
 
     private func stringColumn(_ statement: OpaquePointer, index: Int32) -> String {

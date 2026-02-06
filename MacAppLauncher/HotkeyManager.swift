@@ -4,23 +4,26 @@ import Foundation
 
 final class HotkeyManager {
     private var hotKeyRefs: [UInt32: EventHotKeyRef] = [:]
-    private var hotKeyIdToAppId: [UInt32: Int] = [:]
+    private var hotKeyIdToAction: [UInt32: HotkeyAction] = [:]
     private var nextId: UInt32 = 1
     private var handlerInstalled = false
-    private let onTrigger: (Int) -> Void
+    private let onTrigger: (HotkeyAction) -> Void
 
-    init(onTrigger: @escaping (Int) -> Void) {
+    init(onTrigger: @escaping (HotkeyAction) -> Void) {
         self.onTrigger = onTrigger
         installHandlerIfNeeded()
     }
 
-    func register(apps: [AppEntry]) {
+    func register(apps: [AppEntry], screenshotHotkey: Hotkey?) {
         unregisterAll()
         for app in apps {
             if app.hotkey.keyCode < 0 {
                 continue
             }
-            registerHotkey(for: app)
+            registerHotkey(keyCode: app.hotkey.keyCode, modifiers: app.hotkey.modifierFlags, action: .app(app.id))
+        }
+        if let screenshotHotkey, screenshotHotkey.keyCode >= 0 {
+            registerHotkey(keyCode: screenshotHotkey.keyCode, modifiers: screenshotHotkey.modifierFlags, action: .screenshot)
         }
     }
 
@@ -29,18 +32,18 @@ final class HotkeyManager {
             UnregisterEventHotKey(ref)
         }
         hotKeyRefs.removeAll()
-        hotKeyIdToAppId.removeAll()
+        hotKeyIdToAction.removeAll()
         nextId = 1
     }
 
-    private func registerHotkey(for app: AppEntry) {
+    private func registerHotkey(keyCode: Int, modifiers: NSEvent.ModifierFlags, action: HotkeyAction) {
         var hotKeyID = EventHotKeyID(signature: hotKeySignature, id: nextId)
         var ref: EventHotKeyRef?
-        let modifiers = carbonModifiers(from: app.hotkey.modifierFlags)
-        let status = RegisterEventHotKey(UInt32(app.hotkey.keyCode), modifiers, hotKeyID, GetEventDispatcherTarget(), 0, &ref)
+        let carbon = carbonModifiers(from: modifiers)
+        let status = RegisterEventHotKey(UInt32(keyCode), carbon, hotKeyID, GetEventDispatcherTarget(), 0, &ref)
         if status == noErr, let ref {
             hotKeyRefs[hotKeyID.id] = ref
-            hotKeyIdToAppId[hotKeyID.id] = app.id
+            hotKeyIdToAction[hotKeyID.id] = action
             nextId += 1
         }
     }
@@ -72,9 +75,9 @@ final class HotkeyManager {
     }
 
     private func handleHotKey(id: UInt32) {
-        guard let appId = hotKeyIdToAppId[id] else { return }
+        guard let action = hotKeyIdToAction[id] else { return }
         DispatchQueue.main.async { [onTrigger] in
-            onTrigger(appId)
+            onTrigger(action)
         }
     }
 

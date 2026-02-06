@@ -16,6 +16,11 @@
 		E88E88E88E88E88E88E88E88 /* SQLiteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88F88F88F88F88F88F88F88 /* SQLiteStore.swift */; };
 		E99E99E99E99E99E99E99E99 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99F99F99F99F99F99F99F99 /* Models.swift */; };
 		EA1EA1EA1EA1EA1EA1EA1EA1 /* LoginItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FA1FA1FA1FA1FA1FA1FA1 /* LoginItemManager.swift */; };
+		ED1ED1ED1ED1ED1ED1ED1ED1 /* ScreenshotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1FD1FD1FD1FD1FD1FD1FD1 /* ScreenshotManager.swift */; };
+		ED2ED2ED2ED2ED2ED2ED2ED2 /* ScreenshotOverlayWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2FD2FD2FD2FD2FD2FD2FD2 /* ScreenshotOverlayWindow.swift */; };
+		ED3ED3ED3ED3ED3ED3ED3ED3 /* AnnotationCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3FD3FD3FD3FD3FD3FD3FD3 /* AnnotationCanvas.swift */; };
+		ED4ED4ED4ED4ED4ED4ED4ED4 /* ScreenshotToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4FD4FD4FD4FD4FD4FD4FD4 /* ScreenshotToolbar.swift */; };
+		ED5ED5ED5ED5ED5ED5ED5ED5 /* ScreenshotModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5FD5FD5FD5FD5FD5FD5FD5 /* ScreenshotModels.swift */; };
 		EC1EC1EC1EC1EC1EC1EC1EC1 /* BoltLauncher.icns in Resources */ = {isa = PBXBuildFile; fileRef = FC1FC1FC1FC1FC1FC1FC1FC1 /* BoltLauncher.icns */; };
 		EB1EB1EB1EB1EB1EB1EB1EB1 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB1FB1FB1FB1FB1FB1FB1FB1 /* Carbon.framework */; };
 		EB2EB2EB2EB2EB2EB2EB2EB2 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2FB2FB2FB2FB2FB2FB2FB2 /* ServiceManagement.framework */; };
@@ -35,6 +40,11 @@
 		F99F99F99F99F99F99F99F99 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		FA1FA1FA1FA1FA1FA1FA1FA1 /* LoginItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemManager.swift; sourceTree = "<group>"; };
 		FA2FA2FA2FA2FA2FA2FA2FA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD1FD1FD1FD1FD1FD1FD1FD1 /* ScreenshotManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotManager.swift; sourceTree = "<group>"; };
+		FD2FD2FD2FD2FD2FD2FD2FD2 /* ScreenshotOverlayWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotOverlayWindow.swift; sourceTree = "<group>"; };
+		FD3FD3FD3FD3FD3FD3FD3FD3 /* AnnotationCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationCanvas.swift; sourceTree = "<group>"; };
+		FD4FD4FD4FD4FD4FD4FD4FD4 /* ScreenshotToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotToolbar.swift; sourceTree = "<group>"; };
+		FD5FD5FD5FD5FD5FD5FD5FD5 /* ScreenshotModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotModels.swift; sourceTree = "<group>"; };
 		FC1FC1FC1FC1FC1FC1FC1FC1 /* BoltLauncher.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = BoltLauncher.icns; path = Resources/BoltLauncher.icns; sourceTree = "<group>"; };
 		FB1FB1FB1FB1FB1FB1FB1FB1 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		FB2FB2FB2FB2FB2FB2FB2FB2 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
@@ -84,6 +94,11 @@
 				F77F77F77F77F77F77F77F77 /* AppLauncher.swift */,
 				F88F88F88F88F88F88F88F88 /* SQLiteStore.swift */,
 				F99F99F99F99F99F99F99F99 /* Models.swift */,
+				FD5FD5FD5FD5FD5FD5FD5FD5 /* ScreenshotModels.swift */,
+				FD1FD1FD1FD1FD1FD1FD1FD1 /* ScreenshotManager.swift */,
+				FD2FD2FD2FD2FD2FD2FD2FD2 /* ScreenshotOverlayWindow.swift */,
+				FD3FD3FD3FD3FD3FD3FD3FD3 /* AnnotationCanvas.swift */,
+				FD4FD4FD4FD4FD4FD4FD4FD4 /* ScreenshotToolbar.swift */,
 				FA1FA1FA1FA1FA1FA1FA1FA1 /* LoginItemManager.swift */,
 				FA2FA2FA2FA2FA2FA2FA2FA2 /* Info.plist */,
 				FC1FC1FC1FC1FC1FC1FC1FC1 /* BoltLauncher.icns */,
@@ -170,6 +185,11 @@
 				E77E77E77E77E77E77E77E77 /* AppLauncher.swift in Sources */,
 				E88E88E88E88E88E88E88E88 /* SQLiteStore.swift in Sources */,
 				E99E99E99E99E99E99E99E99 /* Models.swift in Sources */,
+				ED5ED5ED5ED5ED5ED5ED5ED5 /* ScreenshotModels.swift in Sources */,
+				ED1ED1ED1ED1ED1ED1ED1ED1 /* ScreenshotManager.swift in Sources */,
+				ED2ED2ED2ED2ED2ED2ED2ED2 /* ScreenshotOverlayWindow.swift in Sources */,
+				ED3ED3ED3ED3ED3ED3ED3ED3 /* AnnotationCanvas.swift in Sources */,
+				ED4ED4ED4ED4ED4ED4ED4ED4 /* ScreenshotToolbar.swift in Sources */,
 				EA1EA1EA1EA1EA1EA1EA1EA1 /* LoginItemManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
